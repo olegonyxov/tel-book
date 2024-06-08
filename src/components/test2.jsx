@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ButtonEdit from '../components/ButtonEdit';
-import ButtonDel from '../components/ButtonDel';
+
 function PeopleList() {
   const [users, setUsers] = useState([]);
 
@@ -10,16 +9,20 @@ useEffect (()=> {
     const data = await response.json();
     setUsers(data);
   }
+
   fetchUsers();
+  console.log(users)
+  console.log("hi")
 },[]);
 
 
   return (
     <div>
+      <p>PeopleList</p>
       <div className="PeopleList">
         <ul className="userList">
           {users.map(user => (
-            <li className = "listItem"  key = {user.id}> <span>{user.name}</span> <span>{user.username}</span> <span>{user.phone}</span> <ButtonEdit id = {user.id}/>   <ButtonDel id = {user.id}/> </li>
+            <li key = {user.id}>{user.name}---{user.username}---{user.phone}</li>
           ))}
         </ul>
       </div>

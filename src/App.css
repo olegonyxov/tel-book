@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.userList {
+  list-style: none;
+
+
+}
+.listItem {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listItem span {
+  width: 200px; 
+  border: 2px;
+  flex: 1; /* Равномерно распределяет оставшееся пространство между элементами */
+}
