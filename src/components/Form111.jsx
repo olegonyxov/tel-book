@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Form({ formData, setFormData, setIsEditing, users, setUsers }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -16,6 +16,7 @@ function Form({ formData, setFormData, setIsEditing, users, setUsers }) {
     updatedUsers[index] = { ...formData };
     setUsers(updatedUsers);
     setFormData({
+      id: null,
       firstName: '',
       lastName: '',
       email: '',
@@ -47,7 +48,7 @@ function Form({ formData, setFormData, setIsEditing, users, setUsers }) {
         onChange={handleChange}
       />
       <button type="submit">Save</button>
-      <button onClick={() => setIsEditing(false)}>Cancel</button>
+      <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
     </form>
   );
 }
