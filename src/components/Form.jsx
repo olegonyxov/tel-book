@@ -11,21 +11,15 @@ function Form({ formData, setFormData, setIsEditing, users, setUsers }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Находим индекс редактируемого пользователя
     const index = users.findIndex(user => user.id === formData.id);
-    // Создаем копию массива пользователей
     const updatedUsers = [...users];
-    // Обновляем данные пользователя в копии массива
     updatedUsers[index] = { ...formData };
-    // Обновляем состояние пользователей
     setUsers(updatedUsers);
-    // Обнуляем данные формы
     setFormData({
       firstName: '',
       lastName: '',
       email: '',
     });
-    // Закрываем форму редактирования
     setIsEditing(false);
   };
 

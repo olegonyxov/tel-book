@@ -69,7 +69,7 @@ function PeopleList() {
     });
     localStorage.setItem("users", JSON.stringify(updatedUsers));
     setUsers(updatedUsers);
-    setIsEditing(false); // Закрытие формы редактирования
+    setIsEditing(false);
   };
 
   return (
