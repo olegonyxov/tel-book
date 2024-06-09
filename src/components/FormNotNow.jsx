@@ -1,16 +1,16 @@
 import React from 'react';
 
 function Form({ formData, setFormData, setIsEditing, users, setUsers }) {
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const index = users.findIndex(user => user.id === formData.id);
     const updatedUsers = [...users];
     updatedUsers[index] = { ...formData };

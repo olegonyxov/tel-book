@@ -44,16 +44,16 @@ function PeopleList() {
     });
   }
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
     setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     setUsers(prevUsers => {
       const updatedUsers = prevUsers.map(user => {
         if (user.id === formData.id) {
