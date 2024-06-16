@@ -52,3 +52,18 @@
   border: 2px;
   flex: 1; /* Равномерно распределяет оставшееся пространство между элементами */
 }
+.start-page{
+  text-align: center;
+}
+.link-list{
+  font-size:large;
+  font-weight: 700;
+  color: blueviolet;
+}
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
