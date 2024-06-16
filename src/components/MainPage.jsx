@@ -7,7 +7,7 @@ export default function MainPage() {
     
     <div className='start-page'>
         <h1>Welcome to Telephone Book app!!! </h1>
-        <Link to="/list" className='link-list'> Go To Tel-Book List</Link>
+        <Link to="/list" className='link-list'> {'>>'}Go To Tel-Book List{'<<'}</Link>
     </div>
   )
 }
